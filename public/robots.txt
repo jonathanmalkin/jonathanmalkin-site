@@ -16,4 +16,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://jonathanmalkin.com/sitemap-index.xml
+Sitemap: https://builtwithjon.com/sitemap-index.xml

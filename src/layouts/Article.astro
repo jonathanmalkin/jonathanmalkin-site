@@ -40,13 +40,13 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Jonathan Malkin',
-    url: 'https://jonathanmalkin.com',
+    url: 'https://builtwithjon.com',
   },
   publisher: {
     '@type': 'Person',
     name: 'Jonathan Malkin',
   },
-  ...(image ? { image: new URL(image, 'https://jonathanmalkin.com').href } : {}),
+  ...(image ? { image: new URL(image, 'https://builtwithjon.com').href } : {}),
 };
 ---
 

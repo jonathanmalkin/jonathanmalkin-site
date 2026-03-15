@@ -17,10 +17,10 @@ His primary work product is Jules, a deeply customized Claude Code system with 1
 
 ## Content
 
-- Articles: https://jonathanmalkin.com/articles/
-- RSS: https://jonathanmalkin.com/rss.xml
-- Jules System: https://jonathanmalkin.com/jules/
-- Projects: https://jonathanmalkin.com/projects/
+- Articles: https://builtwithjon.com/articles/
+- RSS: https://builtwithjon.com/rss.xml
+- Jules System: https://builtwithjon.com/jules/
+- Projects: https://builtwithjon.com/projects/
 
 ## Links
 

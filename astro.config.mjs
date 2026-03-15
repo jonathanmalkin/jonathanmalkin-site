@@ -4,6 +4,6 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://jonathanmalkin.com',
+  site: 'https://builtwithjon.com',
   integrations: [mdx(), sitemap()],
 });
