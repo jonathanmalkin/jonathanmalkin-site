@@ -6,6 +6,9 @@ Personal site for Jonathan Malkin. Portfolio, articles, Jules showcase.
 
 - **Framework:** Astro v6 (static output)
 - **Hosting:** Cloudflare Pages (auto-deploy on push to main)
+- **Domains:** builtwithjon.com (primary), jonathanmalkin.com (301 redirect)
+- **Email:** jonathan@builtwithjon.com, jules@builtwithjon.com (Cloudflare Email Routing → Gmail)
+- **Repo:** github.com/jonathanmalkin/builtwithjon
 - **Content:** Markdown with frontmatter in `src/content/articles/`
 - **Styling:** Hand-written CSS, system font stack, dark mode via prefers-color-scheme
 - **SEO/GEO:** JSON-LD schema, sitemap, RSS, llms.txt, robots.txt (AI-permissive)
