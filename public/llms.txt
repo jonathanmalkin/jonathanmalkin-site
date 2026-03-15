@@ -25,6 +25,6 @@ His primary work product is Jules, a deeply customized Claude Code system with 1
 ## Links
 
 - GitHub: https://github.com/jonathanmalkin
-- Reddit: https://reddit.com/u/builtwithjon
+- Reddit: https://www.reddit.com/user/jonathanmalkin/
 - X/Twitter: https://x.com/builtwithjon
 - Jules Source: https://github.com/jonathanmalkin/jules
