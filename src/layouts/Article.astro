@@ -1,0 +1,92 @@
+---
+import Base from './Base.astro';
+import StoryBadge from '../components/StoryBadge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  updated?: Date;
+  story: number;
+  tags: string[];
+  platforms?: {
+    reddit?: string;
+    x?: string;
+  };
+  image?: string;
+}
+
+const { title, description, date, updated, story, tags, platforms, image } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const formattedUpdated = updated?.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  datePublished: date.toISOString(),
+  dateModified: (updated ?? date).toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Jonathan Malkin',
+    url: 'https://jonathanmalkin.com',
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Jonathan Malkin',
+  },
+  ...(image ? { image: new URL(image, 'https://jonathanmalkin.com').href } : {}),
+};
+---
+
+<Base
+  title={title}
+  description={description}
+  image={image}
+  article={true}
+  publishedTime={date.toISOString()}
+  modifiedTime={(updated ?? date).toISOString()}
+  schema={articleSchema}
+>
+  <article class="container">
+    <header class="article-header">
+      <h1>{title}</h1>
+      <div class="meta">
+        <time datetime={date.toISOString()}>Published {formattedDate}</time>
+        {formattedUpdated && updated && updated.getTime() !== date.getTime() && (
+          <span> &middot; Updated {formattedUpdated}</span>
+        )}
+        &middot;
+        <StoryBadge story={story} />
+      </div>
+    </header>
+    <div class="article-content">
+      <slot />
+    </div>
+    <footer class="article-footer">
+      {platforms && (platforms.reddit || platforms.x) && (
+        <div class="platforms">
+          <span>Also on:</span>
+          {platforms.reddit && <a href={platforms.reddit}>Reddit</a>}
+          {platforms.x && <a href={platforms.x}>X</a>}
+        </div>
+      )}
+      {tags.length > 0 && (
+        <p style="margin-top: 0.75rem;">
+          Tags: {tags.join(', ')}
+        </p>
+      )}
+    </footer>
+  </article>
+</Base>

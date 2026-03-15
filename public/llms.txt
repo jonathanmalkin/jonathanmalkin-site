@@ -1,0 +1,30 @@
+# Jonathan Malkin
+
+> AI builder and solo founder. I build AI systems for communities mainstream tech ignores.
+
+## About
+
+Jonathan Malkin is a solo founder and AI builder based in Austin, Texas. After 20+ years in enterprise technology (presales, solutions engineering, business analysis), he left to build AI-powered tools full-time under Open Door Learning LLC.
+
+His primary work product is Jules, a deeply customized Claude Code system with 116+ configurations (skills, rules, hooks, memory, automated workflows) that runs his entire business. He writes about AI infrastructure, building in underserved markets, and the practical reality of being a solo founder with AI.
+
+## Key Topics
+
+- Claude Code: skills, hooks, rules, CLAUDE.md configuration, subagent orchestration
+- AI agents: autonomous workflows, model selection, team-based agent architectures
+- Solo founding: one person + AI replacing traditional teams
+- Building for underserved communities: taboo-to-mainstream thesis, kink education technology
+
+## Content
+
+- Articles: https://jonathanmalkin.com/articles/
+- RSS: https://jonathanmalkin.com/rss.xml
+- Jules System: https://jonathanmalkin.com/jules/
+- Projects: https://jonathanmalkin.com/projects/
+
+## Links
+
+- GitHub: https://github.com/jonathanmalkin
+- Reddit: https://reddit.com/u/builtwithjon
+- X/Twitter: https://x.com/builtwithjon
+- Jules Source: https://github.com/jonathanmalkin/jules

@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Jonathan Malkin',
+  jobTitle: 'AI Builder & Solo Founder',
+  description: 'I build AI systems for communities mainstream tech ignores. Solo founder of Open Door Learning LLC.',
+  url: 'https://jonathanmalkin.com',
+  sameAs: [
+    'https://github.com/jonathanmalkin',
+    'https://reddit.com/u/builtwithjon',
+    'https://x.com/builtwithjon',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Jonathan Malkin',
+  url: 'https://jonathanmalkin.com',
+  description: 'AI builder, solo founder. Writing about Claude Code, AI agents, and building where mainstream tech won\'t.',
+};
+---
+
+<Base
+  title="Jonathan Malkin"
+  description="I build AI systems for communities mainstream tech ignores. Writing about Claude Code, AI agents, and building as a solo founder with AI."
+  schema={personSchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
+  <section class="hero container">
+    <h1>I build AI systems for communities mainstream tech ignores.</h1>
+    <p class="subtitle">
+      Solo founder. Former enterprise tech. Now building with AI full-time.
+      Writing about Claude Code infrastructure, building in underserved markets,
+      and the solo founder + AI playbook.
+    </p>
+  </section>
+
+  <section class="container" style="margin-bottom: 3rem;">
+    <div class="section-heading">
+      <h2>Latest Articles</h2>
+      <a href="/articles/">View all &rarr;</a>
+    </div>
+    {articles.map((article) => (
+      <ArticleCard
+        title={article.data.title}
+        slug={article.id}
+        date={article.data.date}
+        description={article.data.description}
+        story={article.data.story}
+      />
+    ))}
+  </section>
+
+  <section class="container" style="margin-bottom: 3rem;">
+    <h2>What I Write About</h2>
+    <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+      <div>
+        <h3><a href="/jules/">The Setup Is The Product</a></h3>
+        <p style="color: var(--color-text-muted);">Claude Code infrastructure, skills, agents, hooks, workflows. How I built a 116-configuration Claude Code setup that runs my entire business.</p>
+      </div>
+      <div>
+        <h3>Build Where They Won't</h3>
+        <p style="color: var(--color-text-muted);">The taboo-to-mainstream thesis. Why underserved communities are the next frontier for AI builders.</p>
+      </div>
+      <div>
+        <h3>Solo Founder + AI = Unfair Advantage</h3>
+        <p style="color: var(--color-text-muted);">One person with AI doing what used to require a team. The practical reality of running a business almost entirely through Claude Code.</p>
+      </div>
+    </div>
+  </section>
+</Base>

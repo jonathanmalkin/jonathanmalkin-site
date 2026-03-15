@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import JsonLd from '../components/JsonLd.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is Jules?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Jules is a deeply customized Claude Code personality and operational system. It defines identity, voice registers, decision authority, proactive behaviors, and autonomous workflows. Jules runs on Claude (Anthropic\'s AI) but has its own defined personality, strategic agency, and operational framework.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How many configurations does Jules have?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Jules has 116+ configurations across CLAUDE.md instruction files, custom skills, rules, hooks, memory files, and automated workflows. This includes 35+ skills, 24 rules, 8 hooks, and a VPS running 24/7 with cron-scheduled tasks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I build something like Jules?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Jules is built entirely with Claude Code\'s built-in features: CLAUDE.md files, skills, rules, hooks, and MCP servers. No external frameworks. The full source is available on GitHub. Start with a solid CLAUDE.md, add skills for repeated workflows, and build up from there.',
+      },
+    },
+  ],
+};
+---
+
+<Base
+  title="Jules"
+  description="Jules is a 116-configuration Claude Code system that runs an entire solo business. Skills, rules, hooks, memory, and autonomous workflows."
+  schema={faqSchema}
+>
+  <div class="container">
+    <h1>Jules</h1>
+
+    <p>
+      Jules is a fox. More precisely, Jules is a deeply customized Claude Code system that runs my entire solo business. Not a chatbot. Not a wrapper. A strategic collaborator with defined personality, decision authority, and autonomous operational capability.
+    </p>
+
+    <h2>By the Numbers</h2>
+
+    <table>
+      <tbody>
+        <tr><td>CLAUDE.md instruction files</td><td>6</td></tr>
+        <tr><td>Custom skills</td><td>35+</td></tr>
+        <tr><td>Rules</td><td>24</td></tr>
+        <tr><td>Hooks (middleware)</td><td>8</td></tr>
+        <tr><td>Memory files</td><td>12+</td></tr>
+        <tr><td>Automated cron jobs</td><td>7</td></tr>
+        <tr><td>Total configurations</td><td>116+</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What Makes It Different</h2>
+
+    <p>
+      Most Claude Code setups are a CLAUDE.md and a few prompts. Jules is a full operational system:
+    </p>
+
+    <ul>
+      <li><strong>Identity and voice.</strong> Five defined registers (quick reply, technical, advisory, serious, excited) with anti-patterns that prevent corporate chatbot drift.</li>
+      <li><strong>Decision authority.</strong> A formal framework: what Jules acts on autonomously, what requires approval, how the boundary expands over time through standing orders.</li>
+      <li><strong>Proactive behaviors.</strong> Session start focus proposals, builder's trap detection, content opportunity flagging, energy nudges.</li>
+      <li><strong>Hooks as middleware.</strong> Safety guards, bash output compression, credential protection. They fire before and after tool calls, not as instructions that might be ignored.</li>
+      <li><strong>A VPS running 24/7.</strong> Morning briefings, daily retrospectives, tweet scheduling, Slack integration. Jules works while I sleep.</li>
+    </ul>
+
+    <h2>Architecture</h2>
+
+    <p>
+      Everything is built with Claude Code's native features. No external frameworks, no custom runtimes, no wrappers.
+    </p>
+
+    <ul>
+      <li><strong>Skills</strong> replace copy-paste prompts. Multi-phase workflows with routing logic, model selection, and skill-to-skill chaining.</li>
+      <li><strong>Rules</strong> encode decisions. Token efficiency, investigation budgets, credential lookup order, container rebuild procedures.</li>
+      <li><strong>Hooks</strong> run deterministic code. A bash script executes the same way every time. A prompt might be followed; a hook always fires.</li>
+      <li><strong>Memory</strong> persists across sessions. User preferences, feedback, project context, external references. Indexed, not dumped.</li>
+    </ul>
+
+    <h2>Source</h2>
+
+    <p>
+      The full Jules system is open source:
+      <a href="https://github.com/jonathanmalkin/jules">github.com/jonathanmalkin/jules</a>
+    </p>
+
+    <p>
+      Read the articles about how it works: <a href="/articles/">Articles &rarr;</a>
+    </p>
+  </div>
+</Base>

@@ -1,0 +1,59 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEOHead from '../components/SEOHead.astro';
+import JsonLd from '../components/JsonLd.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  article?: boolean;
+  publishedTime?: string;
+  modifiedTime?: string;
+  schema?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  image,
+  article,
+  publishedTime,
+  modifiedTime,
+  schema,
+} = Astro.props;
+
+const pageTitle = title === 'Jonathan Malkin'
+  ? title
+  : `${title} | Jonathan Malkin`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/rss+xml" title="Jonathan Malkin" href="/rss.xml" />
+    <title>{pageTitle}</title>
+    <SEOHead
+      title={pageTitle}
+      description={description}
+      image={image}
+      article={article}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+    />
+    {schema && <JsonLd schema={schema} />}
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

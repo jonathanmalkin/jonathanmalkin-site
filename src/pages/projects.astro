@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Projects"
+  description="Current and past projects: Jules (Claude Code system), Kink Archetype Quiz, and more."
+>
+  <div class="container">
+    <h1>Projects</h1>
+
+    <div class="project-card">
+      <h3><a href="/jules/">Jules</a></h3>
+      <span class="status">Active</span>
+      <p>
+        A 116-configuration Claude Code system that runs a solo business. Custom personality, decision framework, autonomous workflows, VPS infrastructure.
+        35+ skills, 24 rules, 8 hooks.
+      </p>
+      <p><a href="https://github.com/jonathanmalkin/jules">GitHub &rarr;</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>Kink Archetype Quiz</h3>
+      <span class="status">Live</span>
+      <p>
+        Interactive personality assessment that identifies kink archetypes. React + TypeScript frontend, PHP + MySQL backend. 200+ daily users with high completion rates.
+      </p>
+      <p><a href="https://quiz.kinky.coffee">quiz.kinky.coffee &rarr;</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>This Site</h3>
+      <span class="status">Active</span>
+      <p>
+        Built with Astro v6, hosted on Cloudflare Pages. Markdown content, zero JavaScript by default, optimized for both Google and AI search engines. Open source.
+      </p>
+      <p><a href="https://github.com/jonathanmalkin/jonathanmalkin.com">Source &rarr;</a></p>
+    </div>
+  </div>
+</Base>
