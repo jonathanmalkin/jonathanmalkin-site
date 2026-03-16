@@ -1,0 +1,28 @@
+---
+// Email capture form — POSTs directly to Buttondown. No JS.
+---
+
+<section class="email-capture">
+  <h2>Get the playbook.</h2>
+  <p>
+    I write about building a solo business entirely through Claude Code.
+    New articles, system updates, and the stuff that doesn't make it to Reddit.
+    No spam. Unsubscribe anytime.
+  </p>
+  <form
+    action="https://buttondown.com/api/emails/builtwithjon"
+    method="post"
+    target="popupwindow"
+    class="email-form"
+  >
+    <input
+      type="email"
+      name="email"
+      placeholder="you@example.com"
+      required
+      aria-label="Email address"
+      class="email-input"
+    />
+    <button type="submit" class="email-submit">Subscribe</button>
+  </form>
+</section>

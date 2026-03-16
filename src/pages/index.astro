@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import EmailCapture from '../components/EmailCapture.astro';
 import { getCollection } from 'astro:content';
 
 const articles = (await getCollection('articles', ({ data }) => !data.draft))
@@ -195,4 +196,6 @@ const websiteSchema = {
       />
     ))}
   </section>
+
+  <EmailCapture />
 </Base>
