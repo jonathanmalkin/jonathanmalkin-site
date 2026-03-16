@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import EmailCapture from '../components/EmailCapture.astro';
 import { getCollection } from 'astro:content';
 
 const articles = (await getCollection('articles', ({ data }) => !data.draft))
@@ -49,6 +48,7 @@ const websiteSchema = {
     <div class="hero-links">
       <a href="https://github.com/jonathanmalkin/jules" class="hero-btn">Jules on GitHub</a>
       <a href="/articles/" class="hero-btn hero-btn-outline">Read the Articles</a>
+      <a href="#subscribe" class="hero-btn hero-btn-outline">Subscribe</a>
     </div>
   </section>
 
@@ -196,6 +196,4 @@ const websiteSchema = {
       />
     ))}
   </section>
-
-  <EmailCapture />
 </Base>
