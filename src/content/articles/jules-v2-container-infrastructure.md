@@ -1,5 +1,5 @@
 ---
-title: "My AI Agent Runs 7 Jobs While I Sleep. Here's the Infrastructure."
+title: "Jules v2 is live. Container infrastructure, 7 scheduled jobs, Slack daemon for phone access. Open source."
 date: 2026-03-17
 description: "Jules v2 container infrastructure: 8-phase boot sequence, 7 scheduled jobs, Slack daemon, credential flow, and the architectural patterns that make an AI agent truly autonomous."
 story: 1
