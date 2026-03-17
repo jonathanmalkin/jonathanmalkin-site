@@ -4,6 +4,9 @@ date: 2026-03-17
 description: "NemoClaw dropped yesterday. My first reaction: I already have most of this. A practitioner's comparison of Docker sandbox isolation, CLAUDE.md policy controls, and the one real gap (inference routing) that NemoClaw actually adds."
 story: 1
 tags: ["claude-code", "docker", "security", "architecture", "nemoclaw", "openclaw"]
+platforms:
+  reddit: "https://www.reddit.com/r/ClaudeCode/comments/1rw92h6/i_built_most_of_what_nvidia_just_announced_using/"
+  x: "https://x.com/builtwithjon/status/2033919569069543927"
 draft: false
 ---
 
