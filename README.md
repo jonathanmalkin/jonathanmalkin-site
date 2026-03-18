@@ -8,3 +8,4 @@ Built with [Astro](https://astro.build) v6. Hosted on [Cloudflare Pages](https:/
 
 - [Jules](https://github.com/jonathanmalkin/jules) — the Claude Code system that runs the business
 - [builtwithjon.com](https://builtwithjon.com) — the live site
+
