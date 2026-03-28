@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 
 const articles = (await getCollection('articles', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+  .slice(0, 6);
 
 const personSchema = {
   '@context': 'https://schema.org',
@@ -56,40 +56,62 @@ const websiteSchema = {
   <!-- Dashboard: Jules System Stats -->
   <section class="dashboard">
     <div class="dashboard-header">
-      <h2>Jules System <span class="pulse">LIVE</span></h2>
+      <h2>Jules System <span class="pulse">LIVE</span> <span class="version-badge">v3</span></h2>
       <p class="dashboard-sub">A Claude Code system that runs a solo business. Here's what's inside.</p>
     </div>
 
     <div class="stat-grid">
       <div class="stat-card">
-        <div class="stat-number">33</div>
+        <div class="stat-number">32</div>
         <div class="stat-label">Skills</div>
-        <div class="stat-detail">Reusable workflows with routing logic, model selection, and skill-to-skill chaining</div>
+        <div class="stat-detail">Multi-phase workflows with routing logic, model selection, and skill-to-skill chaining</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">15</div>
+        <div class="stat-number">21</div>
         <div class="stat-label">Rules</div>
-        <div class="stat-detail">Always-on context: credential lookup, token efficiency, investigation budgets</div>
+        <div class="stat-detail">Always-on context: request routing, credential lookup, token efficiency, research standards</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">12</div>
+        <div class="stat-number">14</div>
         <div class="stat-label">Hooks</div>
-        <div class="stat-detail">Deterministic middleware: safety guards, output compression, plan enforcement</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">7</div>
-        <div class="stat-label">Cron Jobs</div>
-        <div class="stat-detail">VPS running 24/7: morning briefings, tweet scheduling, auth heartbeat</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">12</div>
-        <div class="stat-label">Memory Files</div>
-        <div class="stat-detail">Persistent context across sessions: feedback, project state, references</div>
+        <div class="stat-detail">Deterministic middleware: safety guards, output compression, credential protection</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">9</div>
-        <div class="stat-label">CLAUDE.md Files</div>
-        <div class="stat-detail">Instruction hierarchy four levels deep, from global to project-specific</div>
+        <div class="stat-label">Scheduled Jobs</div>
+        <div class="stat-detail">VPS running 24/7: daily retro, morning briefings, auth heartbeat, email fetch</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Agents</div>
+        <div class="stat-detail">Specialized subagents: code review, quiz testing, content authoring, codebase exploration</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number always-on">ON</div>
+        <div class="stat-label">Slack Daemon</div>
+        <div class="stat-detail">24/7 phone access: message from anywhere, autonomous task dispatch</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Version Evolution -->
+  <section class="container" style="margin-bottom: 3rem;">
+    <h2>How Jules Evolved</h2>
+    <div class="version-strip">
+      <div class="version-col">
+        <div class="version-tag">v1</div>
+        <div class="version-title">Identity + Skills</div>
+        <p>Personality, voice registers, decision authority. CLAUDE.md files and early skill workflows.</p>
+      </div>
+      <div class="version-col">
+        <div class="version-tag">v2</div>
+        <div class="version-title">Container + Automation</div>
+        <p>VPS with Docker, cron jobs, Slack daemon, morning briefings. Jules works while I sleep.</p>
+      </div>
+      <div class="version-col version-col-current">
+        <div class="version-tag">v3</div>
+        <div class="version-title">Planning + Research + Security</div>
+        <p>Goal decomposition, dispatch system, parallel research agents, security hooks, context reload.</p>
       </div>
     </div>
   </section>
@@ -97,64 +119,157 @@ const websiteSchema = {
   <!-- Architecture Diagram -->
   <section class="container" style="margin-bottom: 3rem;">
     <h2>How It Works</h2>
-    <div class="arch-diagram">
-      <div class="arch-layer">
-        <div class="arch-label">Interactive</div>
-        <div class="arch-boxes">
-          <div class="arch-box">Terminal Session</div>
-          <div class="arch-arrow">&rarr;</div>
-          <div class="arch-box">Jules Personality</div>
-          <div class="arch-arrow">&rarr;</div>
-          <div class="arch-box">Skills &amp; Routing</div>
+    <div class="layer-stack">
+      <div class="layer-bar layer-products">
+        <span class="layer-icon">&#9881;</span>
+        <div>
+          <div class="layer-name">Products</div>
+          <div class="layer-desc">Quiz app, website, content pipeline. Applications the system builds and ships.</div>
         </div>
       </div>
-      <div class="arch-connector">&#8595;</div>
-      <div class="arch-layer">
-        <div class="arch-label">Middleware</div>
-        <div class="arch-boxes">
-          <div class="arch-box arch-hook">Safety Guard</div>
-          <div class="arch-box arch-hook">Plan Enforcer</div>
-          <div class="arch-box arch-hook">Output Compress</div>
-          <div class="arch-box arch-hook">Clipboard Validate</div>
+      <div class="layer-bar layer-automation">
+        <span class="layer-icon">&#9200;</span>
+        <div>
+          <div class="layer-name">Automation</div>
+          <div class="layer-desc">9 scheduled jobs, Slack daemon, dispatch system. Runs 24/7 on a VPS.</div>
         </div>
       </div>
-      <div class="arch-connector">&#8595;</div>
-      <div class="arch-layer">
-        <div class="arch-label">Autonomous</div>
-        <div class="arch-boxes">
-          <div class="arch-box arch-infra">VPS + Docker</div>
-          <div class="arch-arrow">&rarr;</div>
-          <div class="arch-box arch-infra">Cron Jobs</div>
-          <div class="arch-arrow">&rarr;</div>
-          <div class="arch-box arch-infra">Slack Daemon</div>
+      <div class="layer-bar layer-infra">
+        <span class="layer-icon">&#128736;</span>
+        <div>
+          <div class="layer-name">Infrastructure</div>
+          <div class="layer-desc">14 hooks, Docker container, credential wiring, auth heartbeat.</div>
+        </div>
+      </div>
+      <div class="layer-bar layer-config">
+        <span class="layer-icon">&#9881;</span>
+        <div>
+          <div class="layer-name">Configuration</div>
+          <div class="layer-desc">21 rules, 32 skills, 4 agents. Request routing, research pipelines, planning.</div>
+        </div>
+      </div>
+      <div class="layer-bar layer-state">
+        <span class="layer-icon">&#128203;</span>
+        <div>
+          <div class="layer-name">Operational State</div>
+          <div class="layer-desc">Terrain, daily briefings, decision queue. Live working state that evolves daily.</div>
+        </div>
+      </div>
+      <div class="layer-bar layer-identity">
+        <span class="layer-icon">&#129418;</span>
+        <div>
+          <div class="layer-name">Identity</div>
+          <div class="layer-desc">Agent personality, user context, goals, voice registers, decision authority.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Workflow Cards -->
+  <!-- Hybrid Architecture -->
   <section class="container" style="margin-bottom: 3rem;">
-    <h2>Daily Workflows</h2>
-    <div class="workflow-grid">
-      <div class="workflow-card">
-        <div class="workflow-icon">&#9728;</div>
-        <h3>Morning Briefing</h3>
-        <p>5:00 AM. Orchestrator reads operational state, surfaces stale items, checks decision queue, pulls cron job status. Ready before the laptop opens.</p>
+    <h2>Hybrid Architecture</h2>
+    <p style="color: var(--color-text-muted); margin-bottom: 1rem;">Mac for interactive development. Container for 24/7 automation. Memory synced through git.</p>
+    <div class="hybrid-arch">
+      <div class="hybrid-node hybrid-mac">
+        <div class="hybrid-label">Mac</div>
+        <div class="hybrid-detail">Interactive dev</div>
       </div>
-      <div class="workflow-card">
-        <div class="workflow-icon">&#9997;</div>
-        <h3>Content Pipeline</h3>
-        <p>Five-stage pipeline: Draft &rarr; AI Review &rarr; Human Review &rarr; Approved &rarr; Published. Jules drafts, adapts voice, schedules posts.</p>
+      <div class="hybrid-arrow">&rarr;</div>
+      <div class="hybrid-node hybrid-github">
+        <div class="hybrid-label">GitHub</div>
+        <div class="hybrid-detail">Memory sync</div>
       </div>
-      <div class="workflow-card">
-        <div class="workflow-icon">&#128736;</div>
-        <h3>Session Wrap-Up</h3>
-        <p>End of every session: commit code, update memory, run self-improvement review, flag publishable content. The system gets smarter each time.</p>
+      <div class="hybrid-arrow">&rarr;</div>
+      <div class="hybrid-node hybrid-vps">
+        <div class="hybrid-label">VPS Container</div>
+        <div class="hybrid-detail">Cron + Slack</div>
       </div>
-      <div class="workflow-card">
-        <div class="workflow-icon">&#9888;</div>
-        <h3>Decision Framework</h3>
-        <p>Every action classified: Just Do It (reversible, within scope) or Ask First (money, external, one-way door). Standing orders earn autonomy over time.</p>
+      <div class="hybrid-arrow">&rarr;</div>
+      <div class="hybrid-node hybrid-phone">
+        <div class="hybrid-label">Phone</div>
+        <div class="hybrid-detail">Slack access</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A Day with Jules -->
+  <section class="container" style="margin-bottom: 3rem;">
+    <h2>A Day with Jules</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-time">Every 1 min</div>
+        <div class="timeline-content">
+          <strong>Git sync</strong> &mdash; Mac and container stay in lock-step via auto-pull.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">Hourly</div>
+        <div class="timeline-content">
+          <strong>Auth heartbeat + email fetch</strong> &mdash; Validates credentials, classifies failures (auth vs. API outage vs. network). Fetches inbox.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">Sessions</div>
+        <div class="timeline-content">
+          <strong>Real-time collaboration</strong> &mdash; Interactive terminal or VS Code. Skills route requests, hooks guard every tool call.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">4:00 PM</div>
+        <div class="timeline-content">
+          <strong>Afternoon scan</strong> &mdash; Content opportunities, engagement check, stale item review.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">8:00 PM</div>
+        <div class="timeline-content">
+          <strong>Daily retro</strong> &mdash; Analyzes the day's sessions, cross-references config, applies self-improvements. Moved from 3 AM to dodge the Anthropic API outage window.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">Midnight</div>
+        <div class="timeline-content">
+          <strong>Morning orchestrator</strong> &mdash; Waits for retro completion, assembles next-day briefing. Ready before the laptop opens.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">Wrap-up</div>
+        <div class="timeline-content">
+          <strong>Session report</strong> &mdash; Commit code, update memory, run quality checks, flag publishable content.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">Anytime</div>
+        <div class="timeline-content">
+          <strong>Slack from phone</strong> &mdash; Message Jules from anywhere. Autonomous task dispatch, research queuing, URL processing.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- v3 Capabilities -->
+  <section class="container" style="margin-bottom: 3rem;">
+    <h2>What's New in v3</h2>
+    <div class="capabilities-grid">
+      <div class="capability-card">
+        <strong>Goal Decomposition</strong>
+        <p>Socratic dialogue breaks life-level goals into executable task queues with dependency tracking.</p>
+      </div>
+      <div class="capability-card">
+        <strong>Planning Dispatch</strong>
+        <p>Triage tasks by ownership (autonomous, interactive, manual), batch decisions, dispatch subagents.</p>
+      </div>
+      <div class="capability-card">
+        <strong>Deep Research</strong>
+        <p>Parallel Haiku agents gather context. Sonnet synthesizes. Full audit trails with source confidence tiers.</p>
+      </div>
+      <div class="capability-card">
+        <strong>Security Layer</strong>
+        <p>3 hooks guard credentials, block dangerous commands, and sanitize outbound content. Deterministic, not probabilistic.</p>
+      </div>
+      <div class="capability-card">
+        <strong>Context Reload</strong>
+        <p>Deterministic session restoration from plans, memory, and operational state. No "where were we?" syndrome.</p>
       </div>
     </div>
   </section>
@@ -178,6 +293,22 @@ const websiteSchema = {
         <h3>Solo Founder + AI</h3>
         <p>One person with AI doing what used to require a team. The practical reality, not the hype.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Getting Started -->
+  <section class="container" style="margin-bottom: 3rem;">
+    <h2>Build Your Own</h2>
+    <div class="getting-started">
+      <p class="getting-started-lead">You don't need 80+ configurations to start. Try this one prompt:</p>
+      <pre><code>claude "Read my codebase. Create a .claude/CLAUDE.md that describes
+the project, key conventions, and common workflows. Then create
+one skill in .claude/skills/ for the task I do most often."</code></pre>
+      <p class="getting-started-sub">
+        That's it. One CLAUDE.md and one skill. Build up from there.
+        <br>Full source: <a href="https://github.com/jonathanmalkin/jules">github.com/jonathanmalkin/jules</a>
+        &middot; <a href="/jules/">How Jules works &rarr;</a>
+      </p>
     </div>
   </section>
 

@@ -19,7 +19,7 @@ const faqSchema = {
       name: 'How many configurations does Jules have?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Jules has 116+ configurations across CLAUDE.md instruction files, custom skills, rules, hooks, memory files, and automated workflows. This includes 35+ skills, 24 rules, 8 hooks, and a VPS running 24/7 with cron-scheduled tasks.',
+        text: 'Jules has 80+ configurations across custom skills, rules, hooks, agents, memory files, and automated workflows. This includes 32 skills, 21 rules, 14 hooks, 4 specialized agents, and a VPS running 9 scheduled jobs plus a 24/7 Slack daemon.',
       },
     },
     {
@@ -36,7 +36,7 @@ const faqSchema = {
 
 <Base
   title="Jules"
-  description="Jules is a 116-configuration Claude Code system that runs an entire solo business. Skills, rules, hooks, memory, and autonomous workflows."
+  description="Jules is an 80+ configuration Claude Code system that runs an entire solo business. 32 skills, 21 rules, 14 hooks, 4 agents, and autonomous workflows on a 24/7 VPS."
   schema={faqSchema}
 >
   <div class="container">
@@ -51,13 +51,13 @@ const faqSchema = {
     <div style="overflow-x: auto;">
       <table>
         <tbody>
-          <tr><td>CLAUDE.md instruction files</td><td>6</td></tr>
-          <tr><td>Custom skills</td><td>35+</td></tr>
-          <tr><td>Rules</td><td>24</td></tr>
-          <tr><td>Hooks (middleware)</td><td>8</td></tr>
-          <tr><td>Memory files</td><td>12+</td></tr>
-          <tr><td>Automated cron jobs</td><td>7</td></tr>
-          <tr><td>Total configurations</td><td>116+</td></tr>
+          <tr><td>Custom skills</td><td>32</td></tr>
+          <tr><td>Rules</td><td>21</td></tr>
+          <tr><td>Hooks (middleware)</td><td>14</td></tr>
+          <tr><td>Specialized agents</td><td>4</td></tr>
+          <tr><td>Memory files</td><td>28</td></tr>
+          <tr><td>Scheduled jobs</td><td>9</td></tr>
+          <tr><td>Slack daemon</td><td>Always on</td></tr>
         </tbody>
       </table>
     </div>
@@ -71,9 +71,10 @@ const faqSchema = {
     <ul>
       <li><strong>Identity and voice.</strong> Five defined registers (quick reply, technical, advisory, serious, excited) with anti-patterns that prevent corporate chatbot drift.</li>
       <li><strong>Decision authority.</strong> A formal framework: what Jules acts on autonomously, what requires approval, how the boundary expands over time through standing orders.</li>
-      <li><strong>Proactive behaviors.</strong> Session start focus proposals, builder's trap detection, content opportunity flagging, energy nudges.</li>
-      <li><strong>Hooks as middleware.</strong> Safety guards, bash output compression, credential protection. They fire before and after tool calls, not as instructions that might be ignored.</li>
-      <li><strong>A VPS running 24/7.</strong> Morning briefings, daily retrospectives, tweet scheduling, Slack integration. Jules works while I sleep.</li>
+      <li><strong>Planning infrastructure.</strong> Goal decomposition via Socratic dialogue, task dispatch system, batched decision cards. Turns vague goals into executable work.</li>
+      <li><strong>Deep research pipeline.</strong> Parallel Haiku agents gather context, Sonnet synthesizes. Full audit trails with confidence tiers and source citations.</li>
+      <li><strong>Security hooks.</strong> 14 hooks running deterministic code: safety guards, credential protection, output sanitization. They fire on every tool call, not as instructions that might be ignored.</li>
+      <li><strong>A VPS running 24/7.</strong> 9 scheduled jobs, Slack daemon, auth heartbeat. Daily retros, morning briefings, email fetch. Jules works while I sleep.</li>
     </ul>
 
     <h2>Architecture</h2>
@@ -82,11 +83,14 @@ const faqSchema = {
       Everything is built with Claude Code's native features. No external frameworks, no custom runtimes, no wrappers.
     </p>
 
+    <p>Six layers, bottom-up: Identity, Operational State, Configuration (32 skills, 21 rules, 4 agents), Infrastructure (14 hooks, Docker), Automation (9 jobs, Slack daemon), and Products.</p>
+
     <ul>
       <li><strong>Skills</strong> replace copy-paste prompts. Multi-phase workflows with routing logic, model selection, and skill-to-skill chaining.</li>
-      <li><strong>Rules</strong> encode decisions. Token efficiency, investigation budgets, credential lookup order, container rebuild procedures.</li>
+      <li><strong>Rules</strong> encode decisions. Request routing, token efficiency, investigation budgets, credential lookup, research standards.</li>
       <li><strong>Hooks</strong> run deterministic code. A bash script executes the same way every time. A prompt might be followed; a hook always fires.</li>
-      <li><strong>Memory</strong> persists across sessions. User preferences, feedback, project context, external references. Indexed, not dumped.</li>
+      <li><strong>Agents</strong> handle specialized work. Code review, quiz testing, content authoring, codebase exploration. Each with its own tools and constraints.</li>
+      <li><strong>Memory</strong> persists across sessions. 28 files covering feedback, project context, references, and operational state. Indexed, not dumped.</li>
     </ul>
 
     <h2>Source</h2>
