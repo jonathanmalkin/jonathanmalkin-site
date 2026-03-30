@@ -4,13 +4,13 @@ import Base from '../layouts/Base.astro';
 
 <Base
   title="Projects"
-  description="Current projects: Jules AI operational system, personality assessment tools, educational content, and more."
+  description="Portfolio: Jules AI system, personality assessments, Discord server management, websites, and developer utilities."
 >
   <div class="container">
     <h1>Projects</h1>
 
     <div class="project-card">
-      <h3><a href="/jules/">Jules</a></h3>
+      <h3><a href="/jules/">Jules AI Collaborator</a></h3>
       <span class="status">Live</span>
       <p>
         Open-source AI operational system that runs my business. Content pipelines, research, scheduling, reporting, code. Built on Claude Code with 18 custom skills, 5 hooks, cloud batch automation, and mobile access.
@@ -19,27 +19,42 @@ import Base from '../layouts/Base.astro';
     </div>
 
     <div class="project-card">
-      <h3>Personality Assessments</h3>
+      <h3><a href="https://quiz.9archetypes.app">9 Archetypes Quiz</a></h3>
       <span class="status">Live</span>
       <p>
-        Interactive assessment tools that help people understand themselves better. The first one identifies relationship and communication styles across 9 personality archetypes for adult audiences. React + TypeScript frontend, PHP + MySQL backend. 200+ daily users.
+        Interactive personality assessment that identifies relationship and communication styles across 9 archetypes for adult audiences. React + TypeScript frontend, PHP + MySQL backend. Personalized email playbooks, partner comparison, and post-quiz survey. 200+ daily users.
+      </p>
+      <p><a href="https://quiz.9archetypes.app">Take the quiz &rarr;</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>Discord Server Manager</h3>
+      <span class="status">Archived</span>
+      <p>
+        Suite of tools for running a 300+ member community server. Automated onboarding and verification, role assignment, and moderation tracking. Analytics dashboard with DAU/WAU/MAU tracking, engagement funnels, daily and weekly health reports, and dead channel detection. Permissions explorer evaluating Discord's 7-layer permission hierarchy via slash commands. DM export tool for archival. Python + TypeScript.
       </p>
     </div>
 
     <div class="project-card">
-      <h3><a href="/articles/">Articles &amp; Content</a></h3>
-      <span class="status">Active</span>
+      <h3><a href="https://github.com/jonathanmalkin/builtwithjon">Websites</a></h3>
+      <span class="status">Live</span>
       <p>
-        Practitioner articles and a subscriber newsletter covering AI automation, solo founding, and building for underserved markets. Published at builtwithjon.com. Built with Astro v6, hosted on Cloudflare.
+        builtwithjon.com and supporting sites. Astro v6 static generation, zero JavaScript, hand-written CSS under 5KB. Cloudflare Workers auto-deploy on push. SEO layer with JSON-LD structured data, sitemap, RSS feed, and llms.txt for AI extraction. Full-stack web: static site generation, CDN hosting, domain management, email routing.
       </p>
-      <p><a href="/articles/">Read the articles &rarr;</a></p>
+      <p><a href="https://github.com/jonathanmalkin/builtwithjon">GitHub &rarr;</a></p>
     </div>
 
     <div class="project-card">
-      <h3>What's Next</h3>
-      <span class="status">In Development</span>
+      <h3>Utilities</h3>
+      <span class="status">Mixed</span>
       <p>
-        Expanding the assessment toolkit into new domains. Interest exploration, negotiation frameworks, and personal development assessments for general audiences. Same interactive approach, new areas.
+        <strong>Whisper Repetition Fix:</strong> Homebrew wrapper intercepting whisper-cli calls with anti-repetition flags — entropy thresholds, context limiting, non-speech suppression. Companion Python post-processor with 90+ hallucination pattern filters, n-gram dedup, and optional Claude Haiku fallback.
+      </p>
+      <p>
+        <strong>Event Distribution System:</strong> Full-stack TypeScript app for AI-powered event creation (ChatGPT themes + DALL-E banners) with automated posting to 6 platforms — WordPress, Facebook, Instagram, Eventbrite, Meetup, and FetLife. RSVP management with location gating.
+      </p>
+      <p>
+        <strong>Plane Sync:</strong> Bidirectional markdown-to-Plane.so sync with cursor pagination, state reconciliation, and 1Password credential management.
       </p>
     </div>
   </div>
