@@ -218,6 +218,39 @@ hr {
   font-weight: 600;
 }
 
+.header-social {
+  margin-left: auto;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.header-social a {
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.header-social a:hover {
+  color: var(--color-accent);
+}
+
+.contact-social {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-social a {
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.contact-social a:hover {
+  color: var(--color-accent);
+}
+
 /* Footer */
 .site-footer {
   margin-top: 4rem;
@@ -227,11 +260,17 @@ hr {
   font-size: 0.85rem;
 }
 
-.site-footer .footer-links {
+.site-footer .footer-social {
   display: flex;
-  gap: 1.25rem;
-  margin-bottom: 0.75rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.site-footer .footer-social a {
+  display: flex;
+  align-items: center;
 }
 
 .site-footer a {
@@ -381,8 +420,9 @@ hr {
 
 /* Home page */
 .hero {
-  padding: 3rem 0 2rem;
+  padding: 1.5rem 0 2rem;
   position: relative;
+  text-align: center;
 }
 
 .hero::before {
@@ -414,8 +454,12 @@ hr {
 
 .hero h1 {
   margin-top: 0;
-  font-size: 2.25rem;
-  line-height: 1.2;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  max-width: 860px;
+  margin-bottom: 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
   background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -425,14 +469,18 @@ hr {
 .hero .subtitle {
   font-size: 1.1rem;
   color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
-  max-width: 600px;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-links {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-btn {
@@ -1296,4 +1344,144 @@ textarea.form-input {
 
 .form-submit:hover {
   background: var(--color-accent-hover);
+}
+
+/* Jules page */
+.jules-hero {
+  text-align: center;
+  padding: 1.5rem 0 1rem;
+}
+
+.jules-hero h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.jules-hero p {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-text-muted);
+}
+
+.jules-hero-link {
+  font-size: 0.95rem;
+}
+
+.jules-pills {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.jules-pill {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+}
+
+.jules-pill:nth-child(1) { background: #6366f1; }
+.jules-pill:nth-child(2) { background: #4585f5; }
+.jules-pill:nth-child(3) { background: #279ee4; }
+.jules-pill:nth-child(4) { background: #1db5d4; }
+
+.jules-section {
+  margin-bottom: 2.5rem;
+}
+
+.jules-section h2 {
+  margin-bottom: 0.75rem;
+}
+
+.jules-section-sub {
+  color: var(--color-text-muted);
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.jules-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.jules-col {
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+.jules-col h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.jules-col p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.jules-workflow {
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0;
+}
+
+.jules-workflow-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0 0.75rem 1rem;
+}
+
+.jules-workflow-label {
+  flex-shrink: 0;
+  width: 85px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  padding-top: 0.15rem;
+}
+
+.jules-workflow-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.jules-workflow-content strong {
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .jules-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .jules-workflow-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .jules-workflow-label {
+    width: auto;
+  }
 }

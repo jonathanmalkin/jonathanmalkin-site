@@ -12,7 +12,7 @@ const personSchema = {
   '@type': 'Person',
   name: 'Jonathan Malkin',
   jobTitle: 'Solo Founder & Technical Advisor',
-  description: 'Solo founder of Open Door Learning LLC. 20+ years translating between technical and business teams. Now building software, automations, and assessment tools.',
+  description: 'Solo founder of Open Door Learning LLC. Building AI-powered software and tools for communities mainstream tech ignores.',
   url: 'https://builtwithjon.com',
   sameAs: [
     'https://github.com/jonathanmalkin',
@@ -27,23 +27,22 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'Jonathan Malkin',
   url: 'https://builtwithjon.com',
-  description: 'Jonathan Malkin: solo founder and technical advisor. 20+ years translating between technical and business teams. Building software, automations, and assessment tools.',
+  description: 'Jonathan Malkin: solo founder building with AI for the communities mainstream tech ignores. 20 years in enterprise tech.',
 };
 ---
 
 <Base
   title="Jonathan Malkin"
-  description="Jonathan Malkin: solo founder and technical advisor. 20+ years translating between technical and business teams. Building software, automations, and assessment tools."
+  description="Jonathan Malkin: solo founder building with AI for the communities mainstream tech ignores. 20 years in enterprise tech."
   schema={personSchema}
 >
   <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
   <!-- Hero -->
   <section class="hero container-wide">
-    <h1>I figure out what businesses actually need, then I build it.</h1>
+    <h1>I solve problems that make other<br/>builders uncomfortable.</h1>
     <p class="subtitle">
-      20 years translating between technical and business teams.
-      Now a solo founder building software, automations, and assessment tools.
+      20 years in enterprise tech.<br />Now a solo founder building with AI for the communities mainstream tech ignores.
     </p>
     <div class="hero-links">
       <a href="/articles/" class="hero-btn">Read the Articles</a>
@@ -74,19 +73,16 @@ const websiteSchema = {
   <section class="container" style="margin-bottom: 3rem;">
     <h2>What I Write About</h2>
     <div class="story-grid">
-      <a href="/jules/" class="story-card story-card-1">
-        <div class="story-num">Story 1</div>
-        <h3>The Setup Is The Product</h3>
+      <div class="story-card story-card-1">
+        <h3>AI Operations</h3>
         <p>How I built an AI operational system that runs a solo business. Infrastructure, automation, the practical details.</p>
-      </a>
+      </div>
       <div class="story-card story-card-2">
-        <div class="story-num">Story 2</div>
-        <h3>Build Where They Won't</h3>
+        <h3>Taboo Markets</h3>
         <p>Why underserved communities are the next frontier. The taboo-to-mainstream trajectory and what it means for builders.</p>
       </div>
       <div class="story-card story-card-3">
-        <div class="story-num">Story 3</div>
-        <h3>Solo Founder + AI</h3>
+        <h3>Team of One</h3>
         <p>One person doing what used to require a team. The practical reality, not the hype.</p>
       </div>
     </div>
