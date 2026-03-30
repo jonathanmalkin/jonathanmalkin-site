@@ -8,54 +8,102 @@ import Base from '../layouts/Base.astro';
 >
   <div class="container">
     <h1>Projects</h1>
+    <p class="page-intro">Things I've built — solo, with AI, and for communities mainstream tech ignores.</p>
 
-    <div class="project-card">
-      <h3><a href="/jules/">Jules AI Collaborator</a></h3>
-      <span class="status">Live</span>
-      <p>
-        Open-source AI operational system that runs my business. Content pipelines, research, scheduling, reporting, code. Built on Claude Code with 18 custom skills, 5 hooks, cloud batch automation, and mobile access.
-      </p>
-      <p><a href="/jules/">How it works &rarr;</a> &middot; <a href="https://github.com/jonathanmalkin/jules">GitHub &rarr;</a></p>
-    </div>
+    <div class="projects-grid">
 
-    <div class="project-card">
-      <h3><a href="https://quiz.9archetypes.app">9 Archetypes Quiz</a></h3>
-      <span class="status">Live</span>
-      <p>
-        Interactive personality assessment that identifies relationship and communication styles across 9 archetypes for adult audiences. React + TypeScript frontend, PHP + MySQL backend. Personalized email playbooks, partner comparison, and post-quiz survey. 200+ daily users.
-      </p>
-      <p><a href="https://quiz.9archetypes.app">Take the quiz &rarr;</a></p>
-    </div>
+      <div class="project-card">
+        <div class="card-header">
+          <h3><a href="/jules/">Jules AI Collaborator</a></h3>
+          <span class="status status-live">Live</span>
+        </div>
+        <p>
+          Open-source AI operational system that runs my business. Content pipelines, research, scheduling, reporting, code. 18 custom skills, 5 hooks, cloud batch automation, and mobile access.
+        </p>
+        <div class="tech-tags">
+          <span>Claude Code</span><span>Python</span><span>Bash</span><span>MCP</span>
+        </div>
+        <div class="card-links">
+          <a href="/jules/">How it works &rarr;</a>
+          <a href="https://github.com/jonathanmalkin/jules">GitHub &rarr;</a>
+        </div>
+      </div>
 
-    <div class="project-card">
-      <h3>Discord Server Manager</h3>
-      <span class="status">Archived</span>
-      <p>
-        Suite of tools for running a 300+ member community server. Automated onboarding and verification, role assignment, and moderation tracking. Analytics dashboard with DAU/WAU/MAU tracking, engagement funnels, daily and weekly health reports, and dead channel detection. Permissions explorer evaluating Discord's 7-layer permission hierarchy via slash commands. DM export tool for archival. Python + TypeScript.
-      </p>
-    </div>
+      <div class="project-card">
+        <div class="card-header">
+          <h3><a href="https://quiz.9archetypes.app">9 Archetypes Quiz</a></h3>
+          <span class="status status-live">Live</span>
+        </div>
+        <p>
+          Interactive personality assessment across 9 archetypes for adult audiences. Personalized email playbooks, partner comparison, and post-quiz survey. 200+ daily users.
+        </p>
+        <div class="tech-tags">
+          <span>React</span><span>TypeScript</span><span>PHP</span><span>MySQL</span>
+        </div>
+        <div class="card-links">
+          <a href="https://quiz.9archetypes.app">Take the quiz &rarr;</a>
+        </div>
+      </div>
 
-    <div class="project-card">
-      <h3><a href="https://github.com/jonathanmalkin/builtwithjon">Websites</a></h3>
-      <span class="status">Live</span>
-      <p>
-        builtwithjon.com and supporting sites. Astro v6 static generation, zero JavaScript, hand-written CSS under 5KB. Cloudflare Workers auto-deploy on push. SEO layer with JSON-LD structured data, sitemap, RSS feed, and llms.txt for AI extraction. Full-stack web: static site generation, CDN hosting, domain management, email routing.
-      </p>
-      <p><a href="https://github.com/jonathanmalkin/builtwithjon">GitHub &rarr;</a></p>
-    </div>
+      <div class="project-card">
+        <div class="card-header">
+          <h3>Discord Server Manager</h3>
+          <span class="status status-archived">Archived</span>
+        </div>
+        <p>
+          Suite of tools for a 300+ member community. Automated onboarding, role assignment, moderation tracking. Analytics with DAU/WAU/MAU, engagement funnels, health reports, dead channel detection. Permissions explorer for Discord's 7-layer hierarchy. DM export for archival.
+        </p>
+        <div class="tech-tags">
+          <span>Python</span><span>TypeScript</span><span>discord.py</span><span>SQLite</span>
+        </div>
+      </div>
 
-    <div class="project-card">
-      <h3>Utilities</h3>
-      <span class="status">Mixed</span>
-      <p>
-        <strong>Whisper Repetition Fix:</strong> Homebrew wrapper intercepting whisper-cli calls with anti-repetition flags — entropy thresholds, context limiting, non-speech suppression. Companion Python post-processor with 90+ hallucination pattern filters, n-gram dedup, and optional Claude Haiku fallback.
-      </p>
-      <p>
-        <strong>Event Distribution System:</strong> Full-stack TypeScript app for AI-powered event creation (ChatGPT themes + DALL-E banners) with automated posting to 6 platforms — WordPress, Facebook, Instagram, Eventbrite, Meetup, and FetLife. RSVP management with location gating.
-      </p>
-      <p>
-        <strong>Plane Sync:</strong> Bidirectional markdown-to-Plane.so sync with cursor pagination, state reconciliation, and 1Password credential management.
-      </p>
+      <div class="project-card">
+        <div class="card-header">
+          <h3><a href="https://github.com/jonathanmalkin/builtwithjon">Websites</a></h3>
+          <span class="status status-live">Live</span>
+        </div>
+        <p>
+          builtwithjon.com and supporting sites. Zero JavaScript, hand-written CSS under 5KB. Auto-deploy on push. Full SEO layer: JSON-LD, sitemap, RSS, llms.txt. Domain management and email routing.
+        </p>
+        <div class="tech-tags">
+          <span>Astro</span><span>Cloudflare Workers</span><span>CSS</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/jonathanmalkin/builtwithjon">GitHub &rarr;</a>
+        </div>
+      </div>
+
+      <div class="project-card card-wide">
+        <div class="card-header">
+          <h3>Utilities</h3>
+          <span class="status status-mixed">Mixed</span>
+        </div>
+        <div class="utility-grid">
+          <div class="utility-item">
+            <strong>Whisper Repetition Fix</strong>
+            <p>Homebrew wrapper intercepting whisper-cli with anti-repetition flags. Companion post-processor: 90+ hallucination filters, n-gram dedup, Claude Haiku fallback.</p>
+            <div class="tech-tags">
+              <span>Python</span><span>Homebrew</span><span>Claude API</span>
+            </div>
+          </div>
+          <div class="utility-item">
+            <strong>Event Distribution</strong>
+            <p>AI-powered event creation with automated posting to 6 platforms. ChatGPT themes, DALL-E banners, RSVP management with location gating.</p>
+            <div class="tech-tags">
+              <span>TypeScript</span><span>OpenAI</span><span>REST APIs</span>
+            </div>
+          </div>
+          <div class="utility-item">
+            <strong>Plane Sync</strong>
+            <p>Bidirectional markdown-to-Plane.so sync with cursor pagination, state reconciliation, and 1Password credentials.</p>
+            <div class="tech-tags">
+              <span>TypeScript</span><span>Plane API</span><span>1Password</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </Base>

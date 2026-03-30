@@ -44,62 +44,44 @@ const faqSchema = {
     <!-- Hero -->
     <section class="jules-hero">
       <h1>Strategic Thinking + Execution.</h1>
-      <p>
-        Think through decisions strategically with AI.<br/>
-        Execute the rest automatically.
-      </p>
-      <div class="jules-pills">
-        <span class="jules-pill">Think</span>
-        <span class="jules-pill">Write</span>
-        <span class="jules-pill">Build</span>
-        <span class="jules-pill">Deploy</span>
+      <p>Most AI tools do tasks. Jules thinks with you first, then does everything else.</p>
+      <div class="jules-identity">
+        <span class="jules-fox-emoji">🦊</span>
+        <span class="jules-name">Jules</span>
       </div>
-      <p class="jules-hero-link">
-        Open source: <a href="https://github.com/jonathanmalkin/jules">github.com/jonathanmalkin/jules</a>
-      </p>
-    </section>
-
-    <!-- The Problem -->
-    <section class="jules-section">
-      <h2>The Problem</h2>
-      <p>
-        Running a business is a continuous loop of thinking, deciding, and executing
-        across a dozen domains. AI helps you deploy faster but speed on individual
-        tasks doesn't move the ball forward.
-      </p>
-      <p>
-        You still think alone, then hand work off to different tools and lose context
-        at every boundary. The hard part was always thinking clearly and keeping
-        everything connected.
-      </p>
     </section>
 
     <!-- What Jules Does -->
     <section class="jules-section">
-      <h2>What Jules Does</h2>
-
       <div class="jules-two-col">
         <div class="jules-col">
           <h3>Thinks with you</h3>
           <p>
             Strategy, decisions, challenging assumptions, decomposition.
-            Jules doesn't generate answers, it spars with you to find better ones.
-            Socratic dialogue, adversarial review. The stuff you'd get from a cofounder
-            if you had one.
+            Socratic dialogue, adversarial review. The cofounder you don't have.
           </p>
+          <ul class="jules-col-list">
+            <li>Surfaces blind spots and second-order effects</li>
+            <li>Disagrees when it sees a better path</li>
+            <li>Connects today's work to long-term goals</li>
+          </ul>
         </div>
         <div class="jules-col">
           <h3>Then executes</h3>
           <p>
-            Software development, content pipelines, deep research, deploys,
-            analytics reporting, scheduling, all in one system with the same context.
-            Decisions from the thinking phase flow straight into execution.
+            Software, content, research, deploys, analytics — one system, same context.
+            Decisions flow directly from thinking to execution.
           </p>
+          <ul class="jules-col-list">
+            <li>No context loss between "what" and "build it"</li>
+            <li>Ships code, publishes content, manages projects</li>
+            <li>Handles the details so you focus on direction</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Workflows -->
+    <!-- The Loop -->
     <section class="jules-section">
       <h2>The Loop in Action</h2>
 
@@ -157,81 +139,91 @@ const faqSchema = {
         </div>
       </div>
     </section>
-
-    <!-- Under the Hood -->
-    <section class="jules-section">
-      <h2>Under the Hood</h2>
-      <p class="jules-section-sub">For the builders who want to know how it's made.</p>
-    </section>
   </div>
 
-  <!-- Dashboard -->
-  <section class="dashboard">
-    <div class="stat-grid">
-      <div class="stat-card">
-        <div class="stat-number">18</div>
-        <div class="stat-label">Skills</div>
-        <div class="stat-detail">/think, /build, /write, /research, /debug. Multi-phase workflows, not single prompts.</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Hooks</div>
-        <div class="stat-detail">Unified safety guard, RTK token optimization, desktop notifications, session-start sync.</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number always-on">ON</div>
-        <div class="stat-label">Cloud Batch</div>
-        <div class="stat-detail">Overnight: daily retro, morning briefing, email fetch. Ready before the laptop opens.</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number always-on">ON</div>
-        <div class="stat-label">Telegram</div>
-        <div class="stat-detail">Interactive access from phone. Cloud web sessions when the laptop is closed.</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">60-90%</div>
-        <div class="stat-label">Token Savings</div>
-        <div class="stat-detail">RTK (Rust Token Killer) rewrites dev commands for massive context savings.</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">&lt;500</div>
-        <div class="stat-label">Lines in CLAUDE.md</div>
-        <div class="stat-detail">Identity, routing, authority, safety. One file, always loaded.</div>
-      </div>
-    </div>
-  </section>
+    <!-- Under the Hood -->
+  <section class="jules-under-hood">
+    <div class="container">
+      <h2>Under the Hood</h2>
+      <p class="jules-section-sub">For the builders who want to know how it's made.</p>
 
-  <div class="container">
-
-    <!-- Architecture -->
-    <section class="jules-section">
-      <h3>Architecture</h3>
-      <p style="color: var(--color-text-muted); margin-bottom: 1rem;">Mac for interactive development. Cloud for scheduled tasks. No VPS, no Docker, no daemons.</p>
-      <div class="hybrid-arch">
-        <div class="hybrid-node hybrid-mac">
-          <div class="hybrid-label">Mac</div>
-          <div class="hybrid-detail">Interactive dev</div>
+      <!-- Stats -->
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-number">17</div>
+          <div class="stat-label">Skills</div>
+          <div class="stat-detail">/think, /build, /write, /research, /debug. Multi-phase workflows, not single prompts.</div>
         </div>
-        <div class="hybrid-arrow">&rarr;</div>
-        <div class="hybrid-node hybrid-github">
-          <div class="hybrid-label">Cloud</div>
-          <div class="hybrid-detail">Overnight batch</div>
+        <div class="stat-card">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Hooks</div>
+          <div class="stat-detail">Unified safety guard, RTK token optimization, desktop notifications, session-start sync.</div>
         </div>
-        <div class="hybrid-arrow">&rarr;</div>
-        <div class="hybrid-node hybrid-vps">
-          <div class="hybrid-label">Telegram</div>
-          <div class="hybrid-detail">Phone access</div>
+        <div class="stat-card">
+          <div class="stat-number always-on">ON</div>
+          <div class="stat-label">Cloud Batch</div>
+          <div class="stat-detail">Overnight: daily retro, morning briefing, email fetch. Ready before the laptop opens.</div>
         </div>
-        <div class="hybrid-arrow">&rarr;</div>
-        <div class="hybrid-node hybrid-phone">
-          <div class="hybrid-label">Cloud Web</div>
-          <div class="hybrid-detail">Remote sessions</div>
+        <div class="stat-card">
+          <div class="stat-number always-on">ON</div>
+          <div class="stat-label">Telegram</div>
+          <div class="stat-detail">Interactive access from phone. Cloud web sessions when the laptop is closed.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">60-90%</div>
+          <div class="stat-label">Token Savings</div>
+          <div class="stat-detail">RTK (Rust Token Killer) rewrites dev commands for massive context savings.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">&lt;500</div>
+          <div class="stat-label">Lines in CLAUDE.md</div>
+          <div class="stat-detail">Identity, routing, authority, safety. One file, always loaded.</div>
         </div>
       </div>
-    </section>
 
-    <!-- Version Evolution -->
-    <section class="jules-section">
+      <!-- Five-Layer Model -->
+      <h3>Five-Layer Model</h3>
+      <p class="jules-arch-sub">Identity is the foundation. Products are what get shipped. Everything in between connects them.</p>
+      <div class="layer-stack">
+        <div class="layer-bar layer-products">
+          <div class="layer-info"><span class="layer-name">Products</span><span class="layer-desc">The apps being shipped</span></div>
+        </div>
+        <div class="layer-bar layer-automation">
+          <div class="layer-info"><span class="layer-name">Automation</span><span class="layer-desc">Cloud batch — retro, briefing, email</span></div>
+        </div>
+        <div class="layer-bar layer-config">
+          <div class="layer-info"><span class="layer-name">Configuration</span><span class="layer-desc">CLAUDE.md + Skills + Hooks</span></div>
+        </div>
+        <div class="layer-bar layer-state">
+          <div class="layer-info"><span class="layer-name">Operational State</span><span class="layer-desc">Terrain, briefing, documents</span></div>
+        </div>
+        <div class="layer-bar layer-identity">
+          <div class="layer-info"><span class="layer-name">Identity</span><span class="layer-desc">Agent profile, user profile, goals</span></div>
+        </div>
+      </div>
+
+      <!-- Environments -->
+      <h3>Environments</h3>
+      <p class="jules-arch-sub">No VPS, no Docker, no daemons.</p>
+      <div class="env-grid">
+        <div class="env-card">
+          <div class="env-icon">&#x1F4BB;</div>
+          <div class="env-label">Mac</div>
+          <div class="env-detail">Interactive dev, VS Code, agent teams, MCP servers, notifications</div>
+        </div>
+        <div class="env-card">
+          <div class="env-icon">&#x2601;&#xFE0F;</div>
+          <div class="env-label">Cloud</div>
+          <div class="env-detail">Scheduled batch, remote interactive sessions from any browser</div>
+        </div>
+        <div class="env-card">
+          <div class="env-icon">&#x1F4F1;</div>
+          <div class="env-label">Telegram</div>
+          <div class="env-detail">Phone access, dispatch tasks, pick up in desktop session</div>
+        </div>
+      </div>
+
+      <!-- Evolution -->
       <h3>Evolution</h3>
       <div class="version-strip">
         <div class="version-col">
@@ -247,13 +239,11 @@ const faqSchema = {
         <div class="version-col version-col-current">
           <div class="version-tag">v4</div>
           <div class="version-title">Simplification</div>
-          <p>32 skills became 18. 15 hooks became 5. VPS eliminated. Same power, half the parts.</p>
+          <p>32 skills became 17. 15 hooks became 5. VPS eliminated. Same power, half the parts.</p>
         </div>
       </div>
-    </section>
 
-    <!-- Build Your Own -->
-    <section class="jules-section">
+      <!-- Build Your Own -->
       <h2>Build Your Own</h2>
       <div class="getting-started">
         <p class="getting-started-lead">You don't need dozens of configurations to start. Try this one prompt:</p>
@@ -263,16 +253,10 @@ one skill in .claude/skills/ for the task I do most often."</code></pre>
         <p class="getting-started-sub">
           That's it. One CLAUDE.md and one skill. Build up from there.
           <br>Full source: <a href="https://github.com/jonathanmalkin/jules">github.com/jonathanmalkin/jules</a>
+          &middot; <a href="/articles/">Read how it works &rarr;</a>
         </p>
       </div>
-    </section>
 
-    <section class="jules-section">
-      <h2>Read More</h2>
-      <p>
-        I write about how Jules works, what I've learned building it, and how the system evolves: <a href="/articles/">Articles &rarr;</a>
-      </p>
-    </section>
-
-  </div>
+    </div>
+  </section>
 </Base>
