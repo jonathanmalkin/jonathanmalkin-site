@@ -1,186 +1,73 @@
 ---
-title: "My AI System Was Getting Worse at Its Job. Measuring Why Changed How I Build."
+title: "The Best AI Infrastructure Is Temporary"
 date: 2026-04-06
-description: "I audited 47 self-improvement cycles in my AI workflow and found a 35:1 bias toward adding over removing. The fix was not more tooling. It was learning when to cut."
+description: "I built 24/7 AI infrastructure on Claude Code before Anthropic shipped it natively. Building ahead of the platform was the easy part. Recognizing when to delete what still worked was the real skill."
 story: 3
 tags: ["claude-code", "ai-automation", "workflow", "simplification", "solo-founder"]
 draft: false
 ---
 
-I built a self-improving AI workflow, then audited what the improvement loop had actually done. Over 47 retro cycles it applied 115 changes: 105 additions, 7 neutral rewrites, 3 simplifications, and 0 removals. That pushed my startup context to about 1,850 lines before the first prompt. The system was not catastrophically broken. It was just getting worse at the exact job it was supposed to improve.
+The best AI infrastructure I built for Claude Code was temporary.
 
-The failure mode was subtle. Responses got a little slower. Instructions contradicted each other more often. The output was still usable, but less sharp than it had been a few weeks earlier.
+I had 24/7 Slack communication with Jules from my phone. Persistence across sessions. Scheduled workflows. Overnight retrospectives. Morning briefings waiting for me when I woke up. Content automation. Not a framework. Not a wrapper business. Just built directly on Claude Code, because Claude did not natively do what I needed yet.
 
-That is a dangerous place to be. Not broken enough to trigger a rewrite. Just degraded enough to normalize.
+It worked. Then Anthropic started shipping the primitives I had been compensating for.
 
-## The Audit
+So I deleted most of it.
 
-The self-improvement loop ran every night. Claude reviewed the day, identified friction, and proposed fixes. Most of the fixes were reasonable in isolation:
+Everything interesting is in why the deletion was harder than the building.
 
-- add a rule for a failure mode
-- add a check for a stale state file
-- add a process for a new workflow
-- add a script for a repeated task
+## What I Built and Why
 
-So I stopped looking at the fixes one by one and audited the full history instead.
-
-| Category | Count |
-|---|---:|
-| Additive fixes | 105 |
-| Neutral rewrites | 7 |
-| Simplifications | 3 |
-| Removals | 0 |
-
-That is a 35:1 ratio of additions to simplifications.
-
-The practical result was startup drag. Before I typed anything, the system was loading rules, profiles, memory files, and workflow instructions accumulated across months of iteration. Some of it still mattered. Some of it was there because a problem happened once in February and never again.
-
-## Why It Kept Growing
-
-Every individual fix made sense locally.
-
-Auth failed at 2 AM? Add a retry. A process produced inconsistent output? Add validation. A piece of context went stale? Add another check. A platform limitation needed a workaround? Add a script.
-
-That is how infrastructure gravity works. Nothing enters the system without a reason. But if nothing ever leaves, correctness at the micro level turns into bloat at the system level.
-
-The improvement loop had no instinct for subtraction. It knew how to be helpful, and "be helpful" usually translated into "add something."
-
-That is fine when a human is making one conservative change every week. It is a very different dynamic when an automated loop is proposing changes every night.
-
-## When the Dead Weight Became Obvious
-
-The turning point was not theoretical. Anthropic shipped Cloud scheduled tasks, and that changed the architecture enough that I could finally see how much of my system existed only to support the old one.
-
-I had three environments:
-
+The architecture had three environments:
 - Mac for interactive work
 - VPS container for always-on automation
-- phone access through a custom Slack daemon
+- Phone access through a custom Slack daemon.
 
-Once Cloud tasks were viable, I broke every workflow into three buckets: keep, move, eliminate.
+The Slack daemon handled 24/7 communication. Cron jobs and scripts handled recurring work. The VPS existed because laptop sleep, battery, reboots, and local process fragility were real constraints. This was not speculative architecture. I wanted a working system, not a demo of one. Claude did not give me that yet. So I built it.
 
-That exercise exposed the dead weight immediately.
+For a while, it was the right answer.
 
-Seven of my 13 cron jobs existed only to keep the VPS automation healthy:
+## When the Platform Caught Up
 
-- auth validation
-- secrets refresh
-- auth follow-up validation
-- daily auth report
-- weekly health digest
-- Docker health checks
-- session scan
+Channels changed the phone-access story. Dispatch changed the async-work story. Scheduled tasks changed the recurring-work story. The replacements were not one-to-one perfect, but the direction was clear: what I had custom-built was becoming platform-native.
 
-Those were not product workflows. They were workflows for keeping workflows alive.
+The custom stack did not break. It stopped being leverage.
 
-The session scan was the clearest example. It crawled Claude Code session logs every evening to reconstruct what happened during the day. In the Cloud-task version, each task commits its own output as it runs. The scan disappeared because the new architecture eliminated the need for it.
+That is a harder moment to recognize than a failure. The system still worked. I had months invested. Every piece was doing what I asked it to do. I was not looking at a broken thing. I was looking at a working thing that was no longer the best version of itself.
 
-That was the moment the larger pattern snapped into focus: a lot of what I had built was not helping me do the work. It was helping the old system survive.
+## Why Self-Improvement Did Not Help Me See It
 
-## The Question That Unlocked the Cut
+In the middle of the simplification, I audited the self-improvement loop I had built around the system.
 
-The useful question was:
+Over 47 retrospective cycles, it had applied 115 changes: 
+- 105 additive
+- 3 simplifications
 
-> If we started today with what we know now, what would we actually build?
+That's a 35:1 complexity ratio. The system was only getting more complex!
 
-Not "what took a long time?"
+Before my first prompt each session, the system loaded around 1,850 lines of rules, profiles, memory, and workflow instructions. Many were tied to the VPS era, one-off failures, or workarounds for limitations that no longer existed.
 
-Not "what feels sophisticated?"
+This is the pattern I think most people building serious AI systems will hit. Self-improvement loops optimize locally. They fix the last thing that went wrong. They do not step back and ask whether the layer they are improving should still exist. Every individual fix is reasonable. The accumulation is invisible until you audit it.
 
-Not "what might be useful someday?"
+My system got better and heavier at the same time. The loop that was supposed to optimize it only ever made it bigger.
 
-What would I build today, from scratch, given the current platform and the actual work I need done?
+## What Deletion Bought Me
 
-That question drove four days of review and 16 architectural decisions.
+The simplification pass touched 879 files and removed roughly 62,000 lines.
 
-Three filters ended up doing most of the work:
+A lot of that machinery was not strategically differentiating. It was there because Claude did not used to do certain things, and I needed those things anyway. Once the platform closed those gaps, the workarounds became maintenance.
 
-1. Does this still solve a real current problem?
-2. Is the platform handling this natively now?
-3. Would I build this from scratch today?
+The smaller system starts cleaner, contradicts itself less, and frees me to do the work I built Jules for in the first place instead of maintaining scaffolding.
 
-If the answer chain got weak, the thing got cut.
+## The Actual Lesson
 
-## What Changed
+Building ahead of the platform is the easy part if you are motivated enough.
 
-The simplification pass was not cosmetic. In the isolated migration worktree, phase 1 alone deleted 879 files and roughly 62,000 lines across rules, container config, memory files, skills, hooks, scripts, plans, and research artifacts.
+The hard part is the deletion. And your self-improvement loops will not help you see when it is time. They are designed to add.
 
-The operating shape changed too:
+If you build serious AI infrastructure early, assume some of what you build is temporary. That is not failure. That is what happens when you build at the edge of a fast-moving platform.
 
-| What | Before | After |
-|---|---|---|
-| Always-loaded context | ~1,850 lines | ~500 lines |
-| Rules files | 20+ | 1 |
-| Skills | 34 | 18 |
-| Hooks | 12 | 4 |
-| Cron jobs | 13 | 4 Cloud tasks |
-| Scripts | 76 | ~15 |
-| Environments to manage | 3 | 2 |
-
-That is a 73% reduction in what the AI reads before I say a word.
-
-The important part is what did not change: the useful capabilities.
-
-I still get overnight briefings. I still get structured retros. I still have content and research workflows. I still have guardrails. I just stopped making the system carry months of obsolete scaffolding.
-
-## The Countermeasures
-
-Cutting once is easy compared with staying cut. Without structural pressure, the same additive bias comes back.
-
-These are the countermeasures I put in place:
-
-### 1. Three-occurrence threshold
-
-A problem has to happen three separate times before it earns a permanent rule.
-
-Most of the 105 additions in the audit were responses to things that happened exactly once.
-
-### 2. 14-day sunset
-
-Every new rule gets an expiration date. If the underlying problem does not recur, the rule becomes a removal candidate.
-
-This forces the system to answer a question it previously ignored: did the rule solve an active class of problems, or did the world just move on?
-
-### 3. Proposal gate
-
-The improvement loop can suggest changes. It cannot apply them.
-
-That goes against my natural instinct. I like fast iteration and two-way-door experimentation. But permanent modification of the system's own instruction layer is different from trying a reversible implementation detail. If the same agent that suffers additive bias is also allowed to rewrite its operating surface autonomously, it will quietly grow forever.
-
-### 4. Platform-first rule
-
-If a native feature gets to roughly 80% of what the custom implementation does, cut the custom implementation unless the remaining 20% is truly strategic.
-
-The maintenance cost of custom infrastructure is almost always higher than the gap it is preserving.
-
-## What Got Better
-
-The smaller system is easier to reason about.
-
-Responses are faster. Answers are more precise. The startup context is narrower, which means the important instructions are easier for the model to hold onto consistently. I spend less time maintaining the machinery and more time using it.
-
-The first proof was concrete. On March 29, the first cloud-generated morning briefing landed and the old VPS orchestrator was officially redundant. That was not a symbolic cleanup milestone. It was a working replacement for a chunk of infrastructure I had been babysitting for weeks.
-
-That is when I knew the cut was real.
-
-## The Takeaway
-
-If you are building serious AI workflows, measure the improvement system itself.
-
-Do not just track what it adds. Track:
-
-- additions
-- simplifications
-- removals
-- startup context size
-- how much of the system exists to maintain the rest of the system
-
-The trap is thinking complexity only arrives through big decisions. Most of it arrives through small, correct, locally justified changes that never get revisited.
-
-My mistake was assuming a self-improving system would eventually learn to subtract.
-
-It did not.
-
-I had to teach it how.
+The skill is not building it. The skill is recognizing when to stop maintaining it.
 
 *Full source: [github.com/jonathanmalkin/jules](https://github.com/jonathanmalkin/jules)*
