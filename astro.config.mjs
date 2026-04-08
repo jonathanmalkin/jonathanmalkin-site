@@ -5,5 +5,5 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://builtwithjon.com',
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap({ filter: (page) => !page.includes('/workshops/') })],
 });
