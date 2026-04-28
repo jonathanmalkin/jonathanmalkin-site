@@ -6,105 +6,67 @@ import Base from '../layouts/Base.astro';
   title="Projects"
   description="Portfolio of AI systems, operations tooling, workflow automation, and implementation case studies."
 >
-  <div class="container">
+  <div class="container-wide">
     <h1>Projects</h1>
-    <p class="page-intro">Systems, tools, and delivery work that show how I approach AI implementation and operations.</p>
+    <p class="page-intro">Systems, tools, and delivery work that show the approach to AI implementation, automation, and operations.</p>
 
-    <div class="projects-grid">
-
-      <div class="project-card">
+    <div class="projects-feature-grid">
+      <div class="project-card project-card-feature">
         <div class="card-header">
-          <h3><a href="/jules/">Jules AI Collaborator</a></h3>
-          <span class="status status-live">Live</span>
+          <h3><a href="/knowledge-os-proof/">Knowledge OS</a></h3>
         </div>
         <p>
-          Open-source AI operational system that runs my business. Content pipelines, research, scheduling, reporting, coding, and operational context in one workflow.
+          The operating pattern behind Built with Jon: signals, source review, agent work, durable memory, and reviewable artifacts. It shows how daily work becomes trusted company knowledge.
         </p>
-        <div class="tech-tags">
-          <span>Claude Code</span><span>Python</span><span>Bash</span><span>MCP</span>
+        <div class="card-links">
+          <a href="/knowledge-os-proof/">Proof page &rarr;</a>
+          <a href="/knowledge-os-product/">Product-style page &rarr;</a>
         </div>
+      </div>
+
+      <div class="project-card project-card-feature">
+        <div class="card-header">
+          <h3><a href="/jules/">Jules AI Collaborator</a></h3>
+        </div>
+        <p>
+          An AI collaborator system that runs research, content, scheduling, reporting, coding, and operational context for the business.
+        </p>
         <div class="card-links">
           <a href="/jules/">How it works &rarr;</a>
           <a href="https://github.com/jonathanmalkin/jules">GitHub &rarr;</a>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card project-card-feature">
         <div class="card-header">
-          <h3><a href="/articles/hormozi-brain-agent/">Hormozi Brain Claude Project</a></h3>
-          <span class="status status-live">Live</span>
+          <h3>Counsel of Advisors</h3>
         </div>
         <p>
-          Public starter kit for building an Alex Hormozi-style Claude Project from public material. Fast path instructions, distilled knowledge files, eval prompts, and a source manifest for upgrading to a full build.
+          A decision pattern for bringing multiple expert perspectives into one clear recommendation before work begins: domain context, critical review, implementation judgment, and a final human call.
         </p>
-        <div class="tech-tags">
-          <span>Claude Projects</span><span>Prompt Design</span><span>Knowledge Packaging</span><span>GitHub</span>
-        </div>
-        <div class="card-links">
-          <a href="/articles/hormozi-brain-agent/">Article &rarr;</a>
-          <a href="https://github.com/jonathanmalkin/hormozi-brain-claude-project">GitHub &rarr;</a>
-        </div>
       </div>
+    </div>
 
-      <div class="project-card">
+    <div class="projects-grid">
+      <div class="project-card card-wide operations-card">
         <div class="card-header">
-          <h3>Discord Server Manager</h3>
-          <span class="status status-archived">Archived</span>
-        </div>
-        <p>
-          Operations suite for a high-volume Discord community. Automated onboarding, role assignment, moderation tracking, health reporting, engagement analytics, dead-channel detection, and permissions auditing.
-        </p>
-        <div class="tech-tags">
-          <span>Python</span><span>TypeScript</span><span>discord.py</span><span>SQLite</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="card-header">
-          <h3><a href="https://github.com/jonathanmalkin/builtwithjon">Marketing Infrastructure</a></h3>
-          <span class="status status-live">Live</span>
-        </div>
-        <p>
-          builtwithjon.com and supporting properties. Lean Astro delivery, Cloudflare deploys, structured metadata, sitemap/RSS/llms.txt support, and the operational plumbing behind a small AI business.
-        </p>
-        <div class="tech-tags">
-          <span>Astro</span><span>Cloudflare Workers</span><span>CSS</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/jonathanmalkin/builtwithjon">GitHub &rarr;</a>
-        </div>
-      </div>
-
-      <div class="project-card card-wide">
-        <div class="card-header">
-          <h3>Utilities</h3>
-          <span class="status status-mixed">Mixed</span>
+          <h3>Operations</h3>
         </div>
         <div class="utility-grid">
           <div class="utility-item">
-            <strong>Whisper Repetition Fix</strong>
-            <p>Homebrew wrapper intercepting whisper-cli with anti-repetition flags. Companion post-processor: 90+ hallucination filters, n-gram dedup, Claude Haiku fallback.</p>
-            <div class="tech-tags">
-              <span>Python</span><span>Homebrew</span><span>Claude API</span>
-            </div>
+            <strong>System Admin</strong>
+            <p>Local agent infrastructure, service supervision, launchd jobs, Cloudflare deploy paths, credential flow, and the daily plumbing that keeps an AI business running.</p>
           </div>
           <div class="utility-item">
-            <strong>Event Distribution</strong>
-            <p>AI-assisted event creation and multi-platform distribution with creative generation, scheduling, and RSVP operations baked into one workflow.</p>
-            <div class="tech-tags">
-              <span>TypeScript</span><span>OpenAI</span><span>REST APIs</span>
-            </div>
+            <strong>Event Management</strong>
+            <p>Event setup, publishing, scheduling, RSVP flow, follow-up materials, and the coordination work behind public demos and operating-system launches.</p>
           </div>
           <div class="utility-item">
-            <strong>Plane Sync</strong>
-            <p>Bidirectional markdown-to-Plane.so sync with cursor pagination, state reconciliation, and 1Password credentials.</p>
-            <div class="tech-tags">
-              <span>TypeScript</span><span>Plane API</span><span>1Password</span>
-            </div>
+            <strong>Utilities</strong>
+            <p>Small tools that remove friction: Whisper repetition cleanup, Plane sync, markdown workflows, credential helpers, and automation scripts for recurring work.</p>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </Base>

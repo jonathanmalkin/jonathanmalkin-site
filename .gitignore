@@ -26,3 +26,4 @@ pnpm-debug.log*
 # editor/tool config
 .claude/
 .vscode/
+.superpowers/

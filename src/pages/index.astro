@@ -26,68 +26,81 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'Jonathan Malkin',
   url: 'https://builtwithjon.com',
-  description: 'Jonathan Malkin builds AI systems, automation workflows, and implementation plans for businesses that want practical results.',
+  description: 'Jonathan Malkin builds AI systems, automation workflows, and implementation plans for teams with real operational complexity.',
 };
 ---
 
 <Base
   title="Jonathan Malkin"
-  description="Jonathan Malkin builds AI systems, automation workflows, and implementation plans for businesses that want practical results."
+  description="Jonathan Malkin builds AI systems, automation workflows, and implementation plans for teams with real operational complexity."
   schema={personSchema}
 >
   <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
-  <!-- Hero -->
   <section class="hero container-wide">
-    <h1>AI systems for work that still<br/>depends on human glue.</h1>
+    <p class="eyebrow">Discovery -> Advisory -> Build</p>
+    <h1>AI automation systems for operations with real complexity.</h1>
     <p class="subtitle">
-      20+ years in enterprise technology. Now I help founders and small teams turn messy operations into repeatable AI-assisted systems.
+      Messy workflows, scattered context, and manual handoffs turned into automation systems people can actually run.
     </p>
+    <div class="hero-proof">
+      <span class="pill blue">Finance</span>
+      <span class="pill sage">HR</span>
+      <span class="pill plum">IT</span>
+      <span class="pill copper">Operations</span>
+      <span class="pill blue">Sales</span>
+      <span class="pill sage">Marketing</span>
+    </div>
     <div class="hero-links">
-      <a href="/workshops/" class="hero-btn">View Services</a>
-      <a href="/contact/" class="hero-btn hero-btn-outline">Start a Project</a>
+      <a href="/workshops/" class="hero-btn">Explore services</a>
+      <a href="/projects/" class="hero-btn hero-btn-outline">See project work</a>
     </div>
   </section>
 
-  <!-- What I Do -->
   <section class="container" id="what-i-do" style="margin-bottom: 3rem;">
-    <h2>What I Do</h2>
+    <h2>Process</h2>
     <div class="story-grid">
-      <a href="/jules/" class="story-card story-card-1">
-        <h3>AI Automation Systems</h3>
-        <p>I build operational systems that handle recurring research, reporting, content, and workflow coordination without adding headcount.</p>
+      <a href="/workshops/" class="story-card story-card-1">
+        <div class="eyebrow">Discover</div>
+        <h3>Find the work worth automating</h3>
+        <p>Process workshops, use-case discovery, and opportunity scoring grounded in how the operation actually runs.</p>
       </a>
       <a href="/workshops/" class="story-card story-card-2">
-        <h3>Advisory &amp; Workshops</h3>
-        <p>Discovery sessions, implementation roadmaps, and hands-on workshops that help teams find the right AI use cases and ship them safely.</p>
+        <div class="eyebrow">Advise</div>
+        <h3>Turn ambition into a buildable path</h3>
+        <p>Architecture, governance, handoff design, tooling choices, and the operating model needed before automation scales.</p>
       </a>
       <a href="/projects/" class="story-card story-card-3">
-        <h3>Proof Through Shipping</h3>
-        <p>Open-source systems, internal tools, and operational case studies that show how I design AI-enabled products in production.</p>
+        <div class="eyebrow">Build</div>
+        <h3>Ship the first working use case</h3>
+        <p>Hands-on automation and AI system builds that produce reviewable artifacts, not just demos or decks.</p>
       </a>
     </div>
   </section>
 
-  <!-- Three Stories -->
-  <section class="container" style="margin-bottom: 3rem;">
-    <h2>How I Help</h2>
-    <div class="story-grid">
-      <div class="story-card story-card-1">
-        <h3>Workflow Discovery</h3>
-        <p>Map the work your team repeats, score what is worth automating, and turn vague AI ambition into a concrete plan.</p>
+  <section class="container-wide">
+    <div class="panel knowledge-home-card">
+      <p class="eyebrow">Knowledge OS</p>
+      <h2>Knowledge OS is the brains behind the company.</h2>
+      <p class="lede">
+        It captures signals, keeps raw source material separate from trusted knowledge, routes agent work through review gates, and turns daily operations into artifacts that can be inspected.
+      </p>
+      <div class="pill-row">
+        <span class="pill blue">Signal intake</span>
+        <span class="pill sage">Promotion gates</span>
+        <span class="pill plum">Review cycles</span>
       </div>
-      <div class="story-card story-card-2">
-        <h3>Implementation Design</h3>
-        <p>Design the tooling, prompts, handoffs, and safeguards needed to ship internal AI systems that people will actually use.</p>
+      <div class="diagram-dark">
+        <div class="diagram-node"><div class="eyebrow">Input</div><strong>Signals</strong></div>
+        <div class="diagram-arrow">-&gt;</div>
+        <div class="diagram-node"><div class="eyebrow">System</div><strong>Review + memory</strong></div>
+        <div class="diagram-arrow">-&gt;</div>
+        <div class="diagram-node"><div class="eyebrow">Output</div><strong>Useful artifacts</strong></div>
       </div>
-      <div class="story-card story-card-3">
-        <h3>Operational Enablement</h3>
-        <p>Turn successful experiments into repeatable operating practices with documentation, standing orders, and measurable outcomes.</p>
-      </div>
+      <p style="margin-top: 1rem;"><a href="/projects/">See project work &rarr;</a></p>
     </div>
   </section>
 
-  <!-- Latest Articles -->
   <section class="container" style="margin-bottom: 3rem;">
     <div class="section-heading">
       <h2>Latest Articles</h2>
