@@ -2,7 +2,7 @@
 
 Personal site for Jonathan Malkin. AI builder, solo founder.
 
-Built with [Astro](https://astro.build) v6. Hosted on [Cloudflare Pages](https://pages.cloudflare.com/). Zero JavaScript by default.
+Built with [Astro](https://astro.build) v6. Hosted on Cloudflare Workers as `jonathanmalkin-site`. Zero JavaScript by default.
 
 ## Local Preview
 
@@ -13,8 +13,20 @@ npm run build
 npm run preview
 ```
 
-In the broader `Active-Work` workspace, there is also a local helper that wraps
-those two commands for convenience.
+## Deploy
+
+Live deploys require both steps:
+
+```bash
+git push origin main
+npm run build
+find dist -name .DS_Store -delete
+wrangler deploy --name jonathanmalkin-site --assets dist --compatibility-date 2026-03-18
+```
+
+In the broader `Active-Work` workspace, use `Scripts/deploy-website.sh` to run the push, build, cleanup, and Wrangler deploy sequence.
+
+GitHub push alone does not publish the live site.
 
 ## See Also
 

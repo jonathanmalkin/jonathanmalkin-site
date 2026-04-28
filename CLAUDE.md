@@ -5,7 +5,7 @@ Personal site for Jonathan Malkin. Portfolio, articles, Jules showcase.
 ## Stack
 
 - **Framework:** Astro v6 (static output)
-- **Hosting:** Cloudflare Workers Builds (auto-deploy on push to main). Project name: `jonathanmalkin-site`.
+- **Hosting:** Cloudflare Workers project `jonathanmalkin-site`. Push to `main`, then deploy with Wrangler.
 - **Domains:** builtwithjon.com (primary), jonathanmalkin.com (301 redirect)
 - **Email:** jonathan@builtwithjon.com, jules@builtwithjon.com (Cloudflare Email Routing → Gmail)
 - **Repo:** github.com/jonathanmalkin/builtwithjon
@@ -47,9 +47,12 @@ npm run preview  # Preview built site
 1. Create `src/content/articles/{slug}.md` with frontmatter
 2. First paragraph should be the AI-extractable summary (the "quick answer layer")
 3. End with `*Full source: [github.com/jonathanmalkin/jules](https://github.com/jonathanmalkin/jules)*`
-4. Commit and push to main — Cloudflare Workers Builds auto-deploys
+4. Commit and push to main
+5. Run Wrangler deploy
 
-**Manual deploy fallback:** `npm run build && npx wrangler deploy --name jonathanmalkin-site --assets dist --compatibility-date 2026-03-18`
+**Deploy command:** `npm run build && find dist -name .DS_Store -delete && wrangler deploy --name jonathanmalkin-site --assets dist --compatibility-date 2026-03-18`
+
+In the broader `Active-Work` workspace, prefer `Scripts/deploy-website.sh` because it pushes `main`, builds, cleans deploy artifacts, and runs Wrangler in one sequence.
 
 ## Project Structure
 
